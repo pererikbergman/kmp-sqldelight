@@ -1,0 +1,3 @@
+ALTER TABLE PostDto ADD COLUMN number_of_views INTEGER DEFAULT 0;
+
+PRAGMA user_version = 2;

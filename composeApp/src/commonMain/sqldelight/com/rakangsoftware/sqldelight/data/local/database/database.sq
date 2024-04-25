@@ -1,0 +1,35 @@
+-- Schema Definitions
+-- -------------------
+
+PRAGMA user_version = 2;
+
+-- Create Post Table
+CREATE TABLE PostDto (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL,
+    creationDate TEXT DEFAULT (datetime('now')) NOT NULL,
+    modifiedDate TEXT DEFAULT (datetime('now')) NOT NULL,
+    number_of_views INTEGER NOT NULL
+);
+
+-- Named Queries for Post Table
+
+selectLastInsertedRowId:
+SELECT last_insert_rowid();
+
+selectAllPosts:
+SELECT * FROM PostDto;
+
+selectPostById:
+SELECT * FROM PostDto WHERE id = :id;
+
+insertPost:
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES (:name, :title, :body, :number_of_views);
+
+updatePost:
+UPDATE PostDto SET name = :name, title = :title, body = :body, number_of_views = :number_of_views, modifiedDate = datetime('now') WHERE id = :id;
+
+deletePost:
+DELETE FROM PostDto WHERE id = :id;

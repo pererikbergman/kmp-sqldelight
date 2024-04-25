@@ -9,16 +9,16 @@ import post.domain.post.PostRepository
 class PostRepositoryMemory() : PostRepository {
 
     private val posts = mutableListOf(
-        Post(1, "Julia", "Discovering Space", "The cosmos is vast and beautiful.", "2024-04-18", "2024-04-18"),
-        Post(2, "Marco", "Java vs Python", "Comparing two powerful languages.", "2024-04-18", "2024-04-18"),
-        Post(3, "Emily", "Gardening Tips", "Learn to grow your own herbs.", "2024-04-18", "2024-04-18"),
-        Post(4, "Raj", "Mysteries of History", "Exploring ancient civilizations.", "2024-04-18", "2024-04-18"),
-        Post(5, "Sarah", "Healthy Eating", "Balanced diets for a busy life.", "2024-04-18", "2024-04-18"),
-        Post(6, "Alex", "Marathon Training", "Preparing for your first race.", "2024-04-18", "2024-04-18"),
-        Post(7, "Lena", "Photography Basics", "Capture stunning landscapes.", "2024-04-18", "2024-04-18"),
-        Post(8, "Tom", "Future of AI", "How AI is changing our world.", "2024-04-18", "2024-04-18"),
-        Post(9, "Sophia", "World Cuisine", "Exploring flavors from around the globe.", "2024-04-18", "2024-04-18"),
-        Post(10, "Miguel", "Space Exploration", "Journey to the stars and beyond.", "2024-04-18", "2024-04-18")
+        Post(1, "Julia", "Discovering Space", "The cosmos is vast and beautiful.", "2024-04-18", "2024-04-18", 0),
+        Post(2, "Marco", "Java vs Python", "Comparing two powerful languages.", "2024-04-18", "2024-04-18", 0),
+        Post(3, "Emily", "Gardening Tips", "Learn to grow your own herbs.", "2024-04-18", "2024-04-18", 0),
+        Post(4, "Raj", "Mysteries of History", "Exploring ancient civilizations.", "2024-04-18", "2024-04-18", 0),
+        Post(5, "Sarah", "Healthy Eating", "Balanced diets for a busy life.", "2024-04-18", "2024-04-18", 0),
+        Post(6, "Alex", "Marathon Training", "Preparing for your first race.", "2024-04-18", "2024-04-18", 0),
+        Post(7, "Lena", "Photography Basics", "Capture stunning landscapes.", "2024-04-18", "2024-04-18", 0),
+        Post(8, "Tom", "Future of AI", "How AI is changing our world.", "2024-04-18", "2024-04-18", 0),
+        Post(9, "Sophia", "World Cuisine", "Exploring flavors from around the globe.", "2024-04-18", "2024-04-18", 0),
+        Post(10, "Miguel", "Space Exploration", "Journey to the stars and beyond.", "2024-04-18", "2024-04-18", 0)
     )
 
     override fun fetchAll() = flow<Result<List<Post>, DataError>> {

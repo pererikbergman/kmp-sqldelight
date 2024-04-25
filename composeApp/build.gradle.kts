@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+
+    id("app.cash.sqldelight") version libs.versions.sqldelight
 }
 
 kotlin {
@@ -34,6 +36,12 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+
+            // AndroidX
+            implementation(libs.androidx.startup.runtime)
+
+            // SQLDelight
+            implementation(libs.android.driver)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -45,9 +53,20 @@ kotlin {
 
             // ViewModel
             implementation(libs.mvvm.compose)
+
+            // SQLDelight
+            implementation(libs.coroutines.extensions)
+            implementation(libs.stately.common) // Needed by SQLDelight
+        }
+        iosMain.dependencies {
+            // SQLDelight
+            implementation(libs.sqldelight.native.driver)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+
+            // SQLDelight
+            implementation(libs.sqldelight.sqlite.driver)
         }
     }
 }
@@ -94,6 +113,14 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.rakangsoftware.sqldelight"
             packageVersion = "1.0.0"
+        }
+    }
+}
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.rakangsoftware.sqldelight.data.local.database")
         }
     }
 }

@@ -1,0 +1,11 @@
+-- Prepopulate
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Julia", 'Discovering Kotlin Multiplatform', 'The cosmos is vast and beautiful.', 123);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Marco", 'Java vs Python', 'Comparing two powerful languages.', 234);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Emily", 'Gardening Tips', 'Learn to grow your own herbs.', 5478);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Raj", 'Mysteries of History', 'Exploring ancient civilizations.', 214);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Sarah", 'Healthy Eating', 'Balanced diets for a busy life.', 578);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Alex", 'Marathon Training', 'Preparing for your first race.', 245);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Lena", 'Photography Basics', 'Capture stunning landscapes.', 23);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Tom", 'Future of AI', 'How AI is changing our world.', 87);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Sophia", 'World Cuisine', 'Exploring flavors from around the globe.', 234);
+INSERT INTO PostDto (name, title, body, number_of_views) VALUES ("Miguel", 'Space Exploration', 'Journey to the stars and beyond.', 657);

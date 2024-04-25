@@ -37,7 +37,7 @@ fun PostScreen(
                 modifier = Modifier.clickable {
                     onPostTapped(post.id)
                 },
-                primaryText = post.title,
+                primaryText = "${post.title} Views: ${post.numberOfViews}",
                 secondaryText = post.body
             )
         }

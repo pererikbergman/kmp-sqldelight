@@ -7,4 +7,5 @@ data class Post(
     val body: String,
     val creationDate: String,
     val modifiedDate: String,
+    val numberOfViews: Long,
 )
